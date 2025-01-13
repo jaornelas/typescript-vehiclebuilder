@@ -57,8 +57,7 @@ class Cli {
           type: 'list',
           name: 'vehicleType',
           message: 'Select a vehicle type',
-          // TODO: Update the choices array to include Truck and Motorbike
-          choices: ['Car'],
+          choices: ['Car', 'Truck', 'Motorbike'],
         },
       ])
       .then((answers) => {
@@ -66,8 +65,13 @@ class Cli {
           // create a car
           this.createCar();
         }
-        // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
-      });
+          // create a truck
+        else if (answers.vehicleType === 'Truck') {
+          this.createTruck();
+        } else {
+          this.createMotorbike();
+        }
+  });
   }
 
   // method to create a car
@@ -98,11 +102,13 @@ class Cli {
           type: 'input',
           name: 'weight',
           message: 'Enter Weight',
+          default: 'lbs',
         },
         {
           type: 'input',
           name: 'topSpeed',
           message: 'Enter Top Speed',
+          default: 'mph',
         },
       ])
       .then((answers) => {
@@ -154,16 +160,19 @@ class Cli {
           type: 'input',
           name: 'weight',
           message: 'Enter Weight',
+          default: 'lbs',
         },
         {
           type: 'input',
           name: 'topSpeed',
           message: 'Enter Top Speed',
+          default: 'mph',
         },
         {
           type: 'input',
           name: 'towingCapacity',
           message: 'Enter Towing Capacity',
+          default: 'lbs',
         },
       ])
       .then((answers) => {
@@ -202,16 +211,19 @@ class Cli {
           type: 'input',
           name: 'weight',
           message: 'Enter Weight',
+          default: 'lbs',
         },
         {
           type: 'input',
           name: 'topSpeed',
           message: 'Enter Top Speed',
+          default: 'mph',
         },
         {
           type: 'input',
           name: 'frontWheelDiameter',
           message: 'Enter Front Wheel Diameter',
+          default: 'inches',
         },
         {
           type: 'input',
@@ -222,6 +234,7 @@ class Cli {
           type: 'input',
           name: 'rearWheelDiameter',
           message: 'Enter Rear Wheel Diameter',
+          default: 'inches',
         },
         {
           type: 'input',
