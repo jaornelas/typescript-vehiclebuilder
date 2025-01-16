@@ -65,8 +65,8 @@ class Truck extends Vehicle implements AbleToTow {
       vehicle.make && vehicle.model
         ? `${vehicle.make} ${vehicle.model}`
         : 'Unknown vehicle';
-    // TODO: Check if the vehicle's weight is less than or equal to the truck's towing capacity
 
+    // Check if the weight of the vehicle is less than or equal to the towing capacity of the Truck
     if (vehicle.weight <= this.towingCapacity) {
       console.log(`${name} is being towed`);
     } else {
@@ -74,12 +74,11 @@ class Truck extends Vehicle implements AbleToTow {
     }
   }
 
-  // TODO: Override the printDetails method from the Vehicle class
+  // Override the printDetails method from the Vehicle class
   override printDetails(): void {
     // Call the printDetails method of the parent class, Vehicle
     super.printDetails();
-    // TODO: The method should call the printDetails method of the parent class
-    // TODO: The method should log the details of the Truck
+
 
     // Print details of the Truck class
     console.log(`VIN: ${this.vin}`);
