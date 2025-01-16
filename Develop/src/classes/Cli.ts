@@ -187,12 +187,12 @@ class Cli {
           [],
           parseInt(answers.towingCapacity)
         )
-        // TODO: Use the answers object to pass the required properties to the Truck constructor
-        // TODO: push the truck to the vehicles array
+        
+        // pushing the truck to the vehicles array
         this.vehicles.push(truck);
-        // TODO: set the selectedVehicleVin to the vin of the truck
+        // setting the selectedVehicleVin to the vin of the truck
         this.selectedVehicleVin = truck.vin;
-        // TODO: perform actions on the truck
+        // performing actions on the truck
         this.performActions();
       });
   }
@@ -270,10 +270,15 @@ class Cli {
             new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand),
           ]
         )
-        // TODO: Use the answers object to pass the required properties to the Motorbike constructor
-        // TODO: push the motorbike to the vehicles array
-        // TODO: set the selectedVehicleVin to the vin of the motorbike
-        // TODO: perform actions on the motorbike
+
+        // push the motorbike to the vehicles array
+        this.vehicles.push(motorbike);
+
+        // set the selectedVehicleVin to the vin of the motorbike
+        this.selectedVehicleVin = motorbike.vin;
+
+        // perform actions on the motorbike
+        this.performActions();
       });
   }
 
@@ -306,9 +311,6 @@ class Cli {
           //perform action on the truck
           this.performActions();
         }
-        // TODO: check if the selected vehicle is the truck
-        // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
-        // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
       });
   }
 
@@ -395,22 +397,29 @@ class Cli {
               this.vehicles[i].reverse();
             }
           }
-        } else if (answers.action === 'Tow') {
+        }
+        // Add the 'Tow' action to the list of choices
+        else if (answers.action === 'Tow') {
           let truck: Truck | undefined;
           // find the selected truck
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+            if (
+              this.vehicles[i].vin === this.selectedVehicleVin &&
+              this.vehicles[i] instanceof Truck
+            ) {
               truck = this.vehicles[i] as Truck;
             }
           }
-          // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
+          // find a vehicle to tow if the selected vehicle is a truck
           if (truck) {
             this.findVehicleToTow(truck);
             return;
           } else {
             console.log('This action is only available for trucks');
           }
-        } else if (answers.action === 'Wheelie') {
+        }
+        // Add the 'Wheelie' action to the list of choices
+        else if (answers.action === 'Wheelie') {
           let motorbike: Motorbike | undefined;
           // find the selected vehicle
           for (let i = 0; i < this.vehicles.length; i++) {
@@ -423,11 +432,8 @@ class Cli {
             }
           }
           // perform a wheelie if the selected vehicle is a motorbike
-          if (motorbike) {
-            motorbike.wheelie();
-          } else {
-            console.log('This action is only available for motorbikes');
-          }
+          (motorbike) ? motorbike.wheelie() : console.log('This action is only available for motorbikes');
+
         } else if (answers.action === 'Select or create another vehicle') {
           // start the cli to return to the initial prompt if the user wants to select or create another vehicle
           this.startCli();
