@@ -49,7 +49,7 @@ This project is licensed under the MIT License
 ## Links
 
 * [GitHub Repository](https://github.com/jaornelas/typescript-vehiclebuilder)
-* [Walkthrough Video](#)
+* [Walkthrough Video](https://drive.google.com/file/d/1vJpEogk0VnR-fd6eGw4FLYroBvAg6ZfI/view)
 
 ## Questions
 If you have any additional questions about the project, please feel free to reach me at:
