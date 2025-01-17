@@ -1,5 +1,9 @@
-# TypeScript_Vehicle-Builder
+# TypeScript- Vehicle Builder
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
+
+## Description
+This is an interactive program that allows a user to either create a new vehicle, or select from an existing vehicle. After the vehicle is selected, users are able to perform various actions and tell the console what to do. It is important to START the vehicle before you accelerate/decelerate, and also STOPPING the vehicle will automatically bring it to 0 mph. Trucks will have the capability to tow, and Motorbikes will be able to do wheelies!
+
 
 ## Table of Contents
 * [Description](#description)
@@ -10,11 +14,9 @@
 * [Links](#links)
 * [Questions](#questions)
 
-## Description
-This is an interactive program that allows a user to either create a new vehicle, or select from an existing vehicle. After the vehicle is selected, users are able to perform various actions and tell the console what to do. 
 
 ## Instructions
-Using the command provided, you'll be able to use the terminal to answer a series of questions about the vehicle creation process. 
+Using the command provided, you'll be able to use the terminal to answer a series of questions about the vehicle creation process. Please be sure to start the terminal from your Develop folder that houses all of your dependencies and package.json files
 
 ```bash
 npm i 
@@ -23,8 +25,13 @@ npm i
 ```bash
 npm start
 ```
+<br>
+Please see truck demo below: <br>
+<img src="./img/demo.png" alt="truck-demo" width="800"/><br>
 
-![Instructions](Instructions.png)
+Please see Motorbike demo below: <br>
+<img src="./img/demo2.png" alt="motorbike-demo" width="800"/><br>
+
 
 ## Technologies
 * TypeScript
@@ -46,8 +53,8 @@ This project is licensed under the MIT License
 
 ## Questions
 If you have any additional questions about the project, please feel free to reach me at:
--GitHub [jaornelas](https://github.com/jaornelas)
--Email [ornelalf001@gmail.com](mailto:ornelalf001@gmail.com)
+- GitHub: [jaornelas](https://github.com/jaornelas)
+- Email:  [ornelalf001@gmail.com](mailto:ornelalf001@gmail.com)
 
 
 
