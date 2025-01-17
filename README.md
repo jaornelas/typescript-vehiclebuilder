@@ -9,7 +9,7 @@ This is an interactive program that allows a user to either create a new vehicle
 * [Description](#description)
 * [Instructions](#instructions)
 * [Technologies](#technologies)
-* [Contributions](#contributions)
+* [Contribution](#contribution)
 * [License](#license)
 * [Links](#links)
 * [Questions](#questions)
@@ -43,7 +43,7 @@ Xpert Learning Assistant, Full Stack forums
 
 
 
-## Licence 
+## License 
 This project is licensed under the MIT License
 
 ## Links
